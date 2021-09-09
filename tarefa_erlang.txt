@@ -1,0 +1,9 @@
+Cadastro de Clientes:
+
+Nome, Data de Nascimento, Nome da Mae, CPF, Cidade, Estado, CEP.
+
+Cadastro de Contatos:
+  Cada cliente pode ter 2 telefones e 2 emails de contato.
+  
+Fazer um programa que permita visualizar, adicionar, editar e excluir clientes e contatos.
+Manter o codigo no github, documentar os arquivos em erlang.
