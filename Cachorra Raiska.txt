@@ -1,0 +1,4 @@
+Nome: Raiska
+Peso: 24kg
+Cor: Marrom com branco
+idade: 7 anos
