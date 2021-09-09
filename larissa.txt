@@ -1,3 +1,5 @@
 larissa mones bedin
 19 anos
 rua rio de janeiro
+bairro: Santa Maria
+CEP: 89812210
