@@ -26,16 +26,20 @@ option(1, Clientes) ->
     menu([Resultado|Clientes]);
 
     option(2, Clientes) ->
+    io:format("~n"),
+    io:format("LISTA DE CLIENTES: "),
+    io:format("~n"),
+    io:format("~n"),
     Resultado = cadastro_clientes:listar_clientes(Clientes),
     menu(Resultado);
 
     option(3, Clientes) ->
-    Id = list_to_integer(utilitario_clientes:pede_tira_n("Informe o ID de quem deseja Editar")),
+    Id = list_to_integer(utilitario_clientes:pede_tira_n("Informe o ID de quem deseja Editar: ->  ")),
     Resultado = cadastro_clientes:editar_clientes(Clientes, Id),
     menu(Resultado);
 
     option(4, Clientes) ->
-    Id = list_to_integer(utilitario_clientes:pede_tira_n("Informe o ID de quem deseja Excluir")),
+    Id = list_to_integer(utilitario_clientes:pede_tira_n("Informe o ID de quem deseja Excluir ->  ")),
     Resultado = cadastro_clientes:excluir_clientes(Clientes, Id),
     menu(Resultado);
 

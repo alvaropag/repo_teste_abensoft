@@ -1,6 +1,8 @@
 -module (utilitario_clientes).
 -export ([pede_converte_binario/1,
             pede_tira_n/1,
+            compare_chave/3,
+            compare_vazio/1,
             remove_barra_n/1,
             get_value/2]).
 
@@ -19,7 +21,8 @@ remove_barra_n(Valor) ->
     string:strip(Valor,right,$\n).
 
 pede_tira_n(Msg) ->
-    string:strip(io:get_line(Msg), right, $\n).
+   string:strip(io:get_line(Msg), right, $\n).
+
 
 compare_chave(Key, NewValue, Empreendimento) ->
   case NewValue == "" of
@@ -28,5 +31,10 @@ compare_chave(Key, NewValue, Empreendimento) ->
     end.
 
 
+compare_vazio(Value) ->
+  case Value == "" of
+        true -> undefined;
+        _ -> Value
+    end.
 
 
