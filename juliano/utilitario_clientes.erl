@@ -38,3 +38,9 @@ compare_vazio(Value) ->
     end.
 
 
+
+compare_renda(Valor) ->
+    case Valor > 0.0 of
+        true -> Valor;
+        _ -> get_value(renda, Cliente)
+    end.
