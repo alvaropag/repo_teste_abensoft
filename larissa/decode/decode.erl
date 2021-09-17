@@ -3,6 +3,8 @@
         lista_exemplo2/0,
         flatten_list/0,
         flatten_list1/0,
+        separa_valor/0,
+        filter_lists/0,
         procura/2]).
 
 %retorna uma lista com 3 elementos.
@@ -27,21 +29,6 @@ procura([E|_Resto], Idxprocurado, Idxprocurado) ->
     E;
 procura([_E|Resto], Idxprocurado, IdxAtual) ->
     procura(Resto, Idxprocurado, IdxAtual+1).
-
-
-%3 devolve apenas listas.
-filter_lists() ->
-     filter_list([1,2,[3,4],5,[6,7,8],9]).
-
-filter_list(Lista) ->
-    filter_list(Lista, []).
-
-filter_list([], Acc) ->
-    lists:reverse(Acc);
-filter_list([Head|Resto], Acc) when is_list(Head) ->
-    filter_list(Resto, [Head|Acc]);
-filter_list([_|Resto], Acc) ->
-    filter_list(Resto, Acc).
 
 
 lista_exemplo() ->
@@ -74,6 +61,7 @@ flatten_lists([Head|Tail], Acc) when is_list(Head) ->
 flatten_lists([Head|Tail], Acc) ->
     flatten_lists(Tail, [Head|Acc]).
 
+%lists flatten que edita se tiver um colchetes a mais:
 flatten_list1() ->
     flatten_lists1([1,2,[3,[4]],5,[6,7,8],9]).
 
@@ -111,19 +99,15 @@ filter_list([_|Resto], Acc) -> % ignoramos o elemento "Head" se ele nao for uma 
 %{a}, {1}
 
 separa_valor() ->
-    tuple([{a,1}, {b, 2}]).
-
-get_tuple(Lista) ->
-    get_tuple(Lista, []).
+    get_tuple([{a,1}, {b, 2}]).
 
 get_tuple([{Head1, Head2} = Var1|_Tail]) ->
-    io:format("~p  ~p Var1=~p~n", [Head1, Head2, Var1]).
+    io:format("Head1 =~p  Head2 =~p Var1=~p~n", [Head1, Head2, Var1]).
 
 
 %[{a,1}, {b, 2}] = [A], [B]
 %{A1, A2} = [A]
 %{B1, B2} = [B]
-
 
 
 
