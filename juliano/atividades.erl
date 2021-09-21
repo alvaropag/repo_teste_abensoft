@@ -69,11 +69,13 @@ achata_flatten1() ->
     achata_flatten([1,2,[3,[4]],5,[6,7,8],9, [0]]).
 
 achata_flatten(Lista) ->
-    achata_flatten(Lista, []).
+    achata_flatten(Lista
+    []).
 
 achata_flatten([], Acc) ->
     io:format("SAIDA: ~n~p~n", [Acc]),
     lists:reverse(Acc);
+
 
 achata_flatten([[_|_] = ListaCabeca|ListaResto], Acc) ->
     io:format("Valor da ListaCabeca: ~p~n, Valor do Resto da lista: ~p~n, Valor do Acumulador: ~p~n", [ListaCabeca, ListaResto, Acc]),
@@ -115,7 +117,7 @@ separa_proplist([{Elem1, Elem2} = Elem|_Resto]) ->
 
 
 
-
+(
 
 
 
